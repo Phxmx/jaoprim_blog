@@ -1,0 +1,255 @@
+.about-odos-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-light) 0%,
+    var(--color-bg-cream) 100%
+  );
+}
+
+.about-odos-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 20px 5rem;
+}
+
+.about-odos-header {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+}
+
+.about-odos-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.about-odos-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--color-green);
+  margin-bottom: 0.5rem;
+}
+
+.about-odos-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  font-style: italic;
+}
+
+.about-odos-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-section {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-green);
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.highlight-section {
+  background: linear-gradient(
+    135deg,
+    var(--color-soft-blue) 0%,
+    var(--color-light-pink) 100%
+  );
+  color: white;
+}
+
+.highlight-section h2 {
+  color: white;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-green);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  text-align: center;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-list li {
+  font-size: 1.1rem;
+  color: #555;
+  padding: 1rem 0 1rem 3rem;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.benefits-list li:last-child {
+  border-bottom: none;
+}
+
+.benefits-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-green);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.cta-section {
+  background: linear-gradient(
+    135deg,
+    var(--color-pink) 0%,
+    var(--color-light-pink) 100%
+  );
+  text-align: center;
+  color: white;
+}
+
+.cta-section h2 {
+  color: white;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.odos-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  color: var(--color-pink);
+  padding: 1.25rem 3rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.odos-link-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.odos-link-button .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.odos-link-button:hover .arrow {
+  transform: translateX(5px);
+}
+
+.testimonial-section {
+  background: var(--color-bg-cream);
+  border-left: 6px solid var(--color-yellow);
+}
+
+.testimonial {
+  margin: 0;
+  padding: 0;
+}
+
+.testimonial p {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.testimonial cite {
+  font-size: 1.1rem;
+  color: #999;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-odos-icon {
+    font-size: 3.5rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .odos-link-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .testimonial p {
+    font-size: 1.1rem;
+  }
+}

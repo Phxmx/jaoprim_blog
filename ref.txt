@@ -1,0 +1,116 @@
+You are a professional frontend web developer and UI/UX designer.
+
+Build a responsive, functional, and cute portfolio-style blog website that works well on all devices (mobile, tablet, desktop).
+
+DESIGN STYLE:
+- Aesthetic, soft, cute, and warm
+- Clean layout, smooth spacing, rounded corners
+- Friendly and modern typography
+- Subtle hover animations and transitions
+
+COLOR PALETTE:
+Primary colors:
+- #E4568B (pink)
+- #A7C7E4 (soft blue)
+- #5D7B3D (green)
+
+Secondary / accent colors:
+- #F6C94D (yellow)
+- #F29BB9 (light pink)
+
+Use colors consistently for buttons, highlights, backgrounds, and section dividers.
+
+---
+
+LAYOUT STRUCTURE:
+
+1. NAVBAR (fixed on top)
+- Contains:
+  - Logo image: logo.jpg (left)
+  - Menu items (right):
+    - Home
+    - My เจอนี่ (Journey)
+    - About ODOS
+    - Gallery
+    - Contact
+- Navbar should be responsive with a hamburger menu on mobile.
+
+---
+
+2. HOME PAGE
+- Hero section with:
+  - A large, full-width image
+  - Big title text:
+    “ODOS Summer Camp  
+     A Journey of Learning and Loving”
+  - Two primary buttons:
+    - “Read My Journey”
+    - “About ODOS”
+- Buttons should use primary and secondary colors and have hover effects.
+
+- Journey Preview section:
+  - Short preview cards linking to the journey timeline sections.
+
+- Photo Highlights section:
+  - Grid of highlighted photos with soft shadows and rounded corners.
+
+---
+
+3. MY เจอนี่ (JOURNEY) PAGE
+- Display 4 blog sections in a vertical TIMELINE layout:
+  1. Before China
+  2. Study Life
+  3. Travel
+  4. Reflection
+
+- Each timeline item should have:
+  - Title
+  - Short preview text
+  - Clickable interaction
+
+- When clicked, open a dedicated blog post page for that section with:
+  - Large title
+  - Blog content
+  - Images
+  - Comfortable reading width
+
+---
+
+4. ABOUT ODOS PAGE
+- A short explanation of what ODOS is
+- Include a clear external link button to:
+  https://odos.thaigov.go.th/
+- Button should open in a new tab
+- Use warm, trustworthy design
+
+---
+
+5. GALLERY PAGE
+- Photographer-style portfolio layout
+- Masonry or grid-style photo layout
+- Each photo may include:
+  - Short description or caption
+- Clean, minimal look that highlights the images
+- Smooth hover effects on photos
+
+---
+
+6. CONTACT MENU (DROPDOWN)
+- “Contact” in navbar opens a dropdown
+- Contains 2 Instagram contacts:
+  - Person 1: Instagram link
+  - Person 2: Instagram link
+- Each item should include:
+  - Instagram icon
+  - Clickable link opening in new tab
+
+---
+
+TECHNICAL REQUIREMENTS:
+- Fully responsive on all devices
+- Semantic React and clean component structure
+- Accessible contrast and readable font sizes
+- Smooth scrolling and subtle animations
+- Ready to be implemented in React (component-based)
+
+Focus on both functionality and aesthetics.
