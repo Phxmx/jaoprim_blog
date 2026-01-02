@@ -215,6 +215,20 @@ const Navbar = () => {
               </p>
               <div className="space-y-2">
                 <a
+                  href="https://www.instagram.com/dekodosbeijing.chn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-xl bg-linear-to-r from-pink-50 to-rose-50 hover:from-pink-100 hover:to-rose-100 transition-all"
+                >
+                  <span className="text-xl">📷</span>
+                  <div>
+                    <p className="font-semibold text-slate-800 text-sm">
+                      ODOS⭐️
+                    </p>
+                    <p className="text-xs text-slate-500">@dekodosbeijing.chn</p>
+                  </div>
+                </a>
+                <a
                   href="https://www.instagram.com/pxriincezs/"
                   target="_blank"
                   rel="noopener noreferrer"
