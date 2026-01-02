@@ -49,6 +49,12 @@ const BlogPost = () => {
       date: "September 2025",
       color: "var(--color-yellow)",
       content: `
+        <p>และนี่คือjourney ของเจ้าหญิงไม่ได้แค่เจอนี่ แต่เจอนู้นเจอนั่นมากมาย การได้พบเจอเรื่องราวมากมายระหว่างทาง จาก Girl form no where ที่ไม่เคยคิดว่าตัวเองจะมีโอกาสได้ไปใช้ชีวิตในต่างประเทศ ได้เรียนรู้สิ่งใหม่ๆ ทั้งในห้องเรียนและนอกห้องเรียน ทุกวันเต็มไปด้วยความตื่นเต้น ความสงสัย และความประทับใจเล็กๆ ที่ค่อยๆ สะสมขึ้นเรื่อยๆ
+พบเจอผู้ร่วมทริปอีก50คน ที่ๆเต็มเปี่ยมไปด้วยพลัง ตลอดการเดินทางครั้งนี้ เราได้พบกับเพื่อนร่วมทริปกว่า 50 คน ที่น่ารัก เต็มไปด้วยพลังบวก และทำให้ทุกวันมีเสียงหัวเราะมากขึ้น เจอพี่เลี้ยงที่ตะมุตะมิที่สุด เป็นทั้งแม่และเพื่อนในคนเดียว คอยให้คำแนะนำและกำลังใจ</p>
+        
+        <p>สิ่งที่สำคัญที่สุดที่ journey ครั้งนี้สอนเรา คือการได้ตระหนักถึงคุณค่าของการศึกษาอย่างแท้จริง เราได้เห็นว่าความรู้ไม่ได้จำกัดอยู่แค่ในหนังสือหรือห้องเรียน แต่คือกุญแจที่ช่วยเปิดประตูไปสู่โลกที่กว้างขึ้น เปิดมุมมองใหม่ๆ และทำให้เราเข้าใจทั้งโลกและตัวเองมากขึ้น การได้เรียนรู้ทำให้เราเชื่อว่า ไม่ว่าเราจะมาจากจุดไหน หากเรายังไม่หยุดเรียนรู้ โอกาสดีๆ ก็พร้อมจะเกิดขึ้นเสมอ
+journey ครั้งนี้เป็นเพียงจุดเริ่มต้นเล็กๆ แต่เป็นจุดเริ่มต้นที่ทำให้เราอยากเรียนรู้ อยากเติบโต และอยากเดินต่อไปบนเส้นทางของตัวเองด้วยหัวใจที่กล้าฝันมากกว่าเดิม</p>
+
         <p>And this is the journey of a princess, not just encountering these, but encountering many other things as well. Getting to encounter many stories along the way. From a girl from nowhere who never thought she would have the opportunity to live abroad, to learn new things both in and out of the classroom. Every day was filled with excitement, curiosity, and small impressive moments that gradually accumulated.</p>
         
         <p>I met 50 trip mates who were full of energy. Throughout this journey, we met over 50 lovely trip mates, full of positive energy, and made every day more filled with laughter. We met the most quirky mentors, who were both mothers and friends in one person, always providing guidance and encouragement.</p>
