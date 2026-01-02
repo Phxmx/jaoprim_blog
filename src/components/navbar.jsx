@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logoimg from "/logo.jpg";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -9,15 +10,16 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 0);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -32,10 +34,16 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo Section - Simplified */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="h-12 w-12 rounded-full overflow-hidden bg-linear-to-br from-pink-100 to-blue-100 shadow-sm group-hover:shadow-md transition-all duration-200">
+            <div
+              className="h-12 w-12 rounded-full overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-200"
+              style={{
+                background:
+                  "linear-gradient(to bottom right, rgb(253, 232, 243), rgb(219, 234, 254))",
+              }}
+            >
               <div className="h-full w-full rounded-full overflow-hidden bg-white p-0.5">
                 <img
-                  src="/logo.jpg"
+                  src={logoimg}
                   alt="JaoPrim Blog"
                   className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
@@ -73,7 +81,11 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setContactOpen(!contactOpen)}
-                className="flex items-center gap-2 px-4 py-2 bg-linear-to-r from-pink-500 to-rose-400 text-white text-sm font-medium rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200"
+                className="flex items-center gap-2 px-4 py-2 text-white text-sm font-medium rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgb(236, 72, 153), rgb(251, 113, 133))",
+                }}
               >
                 <svg
                   className="w-4 h-4"
@@ -107,7 +119,13 @@ const Navbar = () => {
               {/* Contact Dropdown - Cleaner */}
               {contactOpen && (
                 <div className="absolute right-0 mt-3 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden animate-fadeIn">
-                  <div className="px-4 py-3 border-b border-slate-100 bg-linear-to-r from-pink-50 to-rose-50">
+                  <div
+                    className="px-4 py-3 border-b border-slate-100"
+                    style={{
+                      background:
+                        "linear-gradient(to right, rgb(253, 242, 248), rgb(254, 242, 242))",
+                    }}
+                  >
                     <h3 className="text-sm font-semibold text-slate-800">
                       Get in touch
                     </h3>
@@ -117,6 +135,26 @@ const Navbar = () => {
                   </div>
 
                   <div className="p-2">
+                    <a
+                      href="https://www.instagram.com/dekodosbeijing.chn/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-pink-50 transition-all"
+                      onClick={() => setContactOpen(false)}
+                    >
+                      <div className="shrink-0 w-11 h-11 bg-pink-100 rounded-full flex items-center justify-center text-lg">
+                        📷
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-semibold text-slate-800 text-sm">
+                          ODOS⭐️
+                        </p>
+                        <p className="text-xs text-slate-500">
+                          @dekodosbeijing.chn
+                        </p>
+                      </div>
+                    </a>
+
                     <a
                       href="https://www.instagram.com/pxriincezs/"
                       target="_blank"
@@ -187,7 +225,7 @@ const Navbar = () => {
         {/* Mobile Menu - Cleaner */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isOpen ? "max-h-125 pb-5" : "max-h-0"
+            isOpen ? "max-h-96 pb-5" : "max-h-0"
           }`}
         >
           <div className="pt-3 space-y-1">
@@ -199,10 +237,16 @@ const Navbar = () => {
                   to={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`block px-5 py-3 rounded-lg text-sm font-medium transition-all ${
-                    isActive
-                      ? "bg-linear-to-r from-pink-500 to-rose-400 text-white"
-                      : "text-slate-700 hover:bg-pink-50"
+                    isActive ? "text-white" : "text-slate-700 hover:bg-pink-50"
                   }`}
+                  style={
+                    isActive
+                      ? {
+                          background:
+                            "linear-gradient(to right, rgb(236, 72, 153), rgb(251, 113, 133))",
+                        }
+                      : {}
+                  }
                 >
                   {link.label}
                 </Link>
@@ -218,21 +262,31 @@ const Navbar = () => {
                   href="https://www.instagram.com/dekodosbeijing.chn/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-linear-to-r from-pink-50 to-rose-50 hover:from-pink-100 hover:to-rose-100 transition-all"
+                  className="flex items-center gap-3 p-3 rounded-xl hover:from-pink-100 hover:to-rose-100 transition-all"
+                  style={{
+                    background:
+                      "linear-gradient(to right, rgb(253, 242, 248), rgb(254, 242, 242))",
+                  }}
                 >
                   <span className="text-xl">📷</span>
                   <div>
                     <p className="font-semibold text-slate-800 text-sm">
                       ODOS⭐️
                     </p>
-                    <p className="text-xs text-slate-500">@dekodosbeijing.chn</p>
+                    <p className="text-xs text-slate-500">
+                      @dekodosbeijing.chn
+                    </p>
                   </div>
                 </a>
                 <a
                   href="https://www.instagram.com/pxriincezs/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-linear-to-r from-pink-50 to-rose-50 hover:from-pink-100 hover:to-rose-100 transition-all"
+                  className="flex items-center gap-3 p-3 rounded-xl hover:from-pink-100 hover:to-rose-100 transition-all"
+                  style={{
+                    background:
+                      "linear-gradient(to right, rgb(253, 242, 248), rgb(254, 242, 242))",
+                  }}
                 >
                   <span className="text-xl">📷</span>
                   <div>
@@ -246,7 +300,11 @@ const Navbar = () => {
                   href="https://www.instagram.com/primary_fond/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-linear-to-r from-pink-50 to-rose-50 hover:from-pink-100 hover:to-rose-100 transition-all"
+                  className="flex items-center gap-3 p-3 rounded-xl hover:from-pink-100 hover:to-rose-100 transition-all"
+                  style={{
+                    background:
+                      "linear-gradient(to right, rgb(253, 242, 248), rgb(254, 242, 242))",
+                  }}
                 >
                   <span className="text-xl">📷</span>
                   <div>

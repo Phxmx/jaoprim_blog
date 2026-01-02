@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import hero from "/hero-image.jpg?url";
+import usbPhoto from "/photos/usb.JPG?url";
+import jaoyingPhoto from "/photos/jaoying.JPG?url";
+import fbcPhoto from "/photos/fbc.JPG?url";
+import friendsPhoto from "/photos/friends.JPG?url";
+import buptPhoto from "/photos/bupt.jpg?url";
+import tiantanPhoto from "/photos/tiantan.JPG?url";
 
 const Home = () => {
   const journeyPreviews = [
@@ -33,12 +40,12 @@ const Home = () => {
   ];
 
   const photoHighlights = [
-    { id: 1, src: "/photos/photo1.jpg", alt: "Highlight 1" },
-    { id: 2, src: "/photos/photo2.jpg", alt: "Highlight 2" },
-    { id: 3, src: "/photos/photo3.jpg", alt: "Highlight 3" },
-    { id: 4, src: "/photos/photo4.jpg", alt: "Highlight 4" },
-    { id: 5, src: "/photos/photo5.jpg", alt: "Highlight 5" },
-    { id: 6, src: "/photos/photo6.jpg", alt: "Highlight 6" },
+    { id: 1, src: usbPhoto, alt: "Highlight 1" },
+    { id: 2, src: jaoyingPhoto, alt: "Highlight 2" },
+    { id: 3, src: fbcPhoto, alt: "Highlight 3" },
+    { id: 4, src: friendsPhoto, alt: "Highlight 4" },
+    { id: 5, src: buptPhoto, alt: "Highlight 5" },
+    { id: 6, src: tiantanPhoto, alt: "Highlight 6" },
   ];
 
   return (
@@ -47,7 +54,7 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-image-container">
           <img
-            src="/hero-image.jpg"
+            src={hero}
             alt="ODOS Summer Camp"
             className="hero-image"
           />
