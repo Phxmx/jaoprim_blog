@@ -19,7 +19,6 @@ function App() {
           <Route path="/about-odos" element={<AboutOdos />} />
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
-        <Home />
       </div>
     </Router>
   );

@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./BlogPost.css";
+import bfc1 from "/blog/Before_china_1.jpg?url";
+import bfc2 from "/blog/Before_china_2.jpg?url";
+import sl1 from "/blog/Study_life_1.jpg?url";
+import sl2 from "/blog/Study_life_2.jpg?url";
+import t1 from "/blog/Travel_1.JPG?url";
+import t2 from "/blog/Travel_2.MOV?url";
+import r1 from "/blog/Reflection_1.jpg?url";
+import r2 from "/blog/Reflection_2.jpg?url";
 
 const BlogPost = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const blogContent = {
     1: {
@@ -19,7 +28,7 @@ const BlogPost = () => {
         
         <p>I'm so excited and really can't wait to start my life overseas and enjoy every moment there.</p>
       `,
-      images: ["/blog/before-china-1.jpg", "/blog/before-china-2.jpg"],
+      images: [bfc1, bfc2],
     },
     2: {
       title: "Study Life",
@@ -31,7 +40,7 @@ const BlogPost = () => {
         
         <p>Even though the classes during the 5-week program focused a lot on math and science, I still really enjoyed them, even as someone from a language and arts background. I tried my best to take part in every class and activity, and it turned out to be a fun and meaningful experience for me.</p>
       `,
-      images: ["/blog/study-life-1.jpg", "/blog/study-life-2.jpg"],
+      images: [sl1, sl2],
     },
     3: {
       title: "Travel",
@@ -41,7 +50,8 @@ const BlogPost = () => {
       content: `
         <p>Every weekend was a new adventure, exploring the beautiful landscapes and vibrant cities of China.</p>
       `,
-      images: ["/blog/travel-1.jpg", "/blog/travel-2.jpg"],
+      images: [t1],
+      video: t2,
     },
     4: {
       title: "Reflection",
@@ -63,7 +73,7 @@ journey ครั้งนี้เป็นเพียงจุดเริ่
         
         <p>This journey is just a small starting point, but it is a starting point that makes us want to learn, want to grow, and want to continue on our own path with a braver heart to dream.</p>
       `,
-      images: ["/blog/reflection-1.jpg", "/blog/reflection-2.jpg"],
+      images: [r1, r2],
     },
   };
 
@@ -105,14 +115,21 @@ journey ครั้งนี้เป็นเพียงจุดเริ่
 
         <div className="blog-post-images">
           {post.images.map((img, index) => (
-            <div key={index} className="blog-post-image-wrapper">
+            <div key={`img-${index}`} className="blog-post-image-wrapper">
               <img
                 src={img}
                 alt={`${post.title} ${index + 1}`}
                 className="blog-post-image"
+                onClick={() => setSelectedImage(img)}
+                style={{ cursor: "pointer" }}
               />
             </div>
           ))}
+          {post.video && (
+            <div className="blog-post-video-wrapper">
+              <video src={post.video} controls className="blog-post-video" />
+            </div>
+          )}
         </div>
 
         <div
@@ -120,6 +137,30 @@ journey ครั้งนี้เป็นเพียงจุดเริ่
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>
+
+      {selectedImage && (
+        <div
+          className="image-modal-overlay"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="image-modal-container"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="image-modal-close"
+              onClick={() => setSelectedImage(null)}
+            >
+              ✕
+            </button>
+            <img
+              src={selectedImage}
+              alt="Full view"
+              className="image-modal-img"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
