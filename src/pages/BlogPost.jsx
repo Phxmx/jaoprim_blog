@@ -7,6 +7,7 @@ import sl1 from "/blog/Study_life_1.jpg?url";
 import sl2 from "/blog/Study_life_2.jpg?url";
 import t1 from "/blog/Travel_1.JPG?url";
 import t2 from "/blog/Travel_2.MOV?url";
+import t3 from "/blog/Travel_3.JPG?url";
 import r1 from "/blog/Reflection_1.jpg?url";
 import r2 from "/blog/Reflection_2.jpg?url";
 
@@ -19,7 +20,7 @@ const BlogPost = () => {
     1: {
       title: "Before China",
       subtitle: "Preparing for the Journey of a Lifetime",
-      date: "June 2025",
+      date: "August 2025",
       color: "var(--color-pink)",
       content: `
         <p>After I passed the ODOS program selection, the last step was drawing lots to see which country I would go to, along with an interview. After that, we had a pre-departure orientation before going abroad.</p>
@@ -33,7 +34,7 @@ const BlogPost = () => {
     2: {
       title: "Study Life",
       subtitle: "Immersed in Learning and Culture",
-      date: "July - August 2025",
+      date: "19 October - 22 November 2025",
       color: "var(--color-soft-blue)",
       content: `
         <p>I studied in Beijing at Beijing University of Posts and Telecommunications, which is a well-known university in China, especially for technology and communication.</p>
@@ -50,13 +51,13 @@ const BlogPost = () => {
       content: `
         <p>Every weekend was a new adventure, exploring the beautiful landscapes and vibrant cities of China.</p>
       `,
-      images: [t1],
+      images: [t1, t3],
       video: t2,
     },
     4: {
       title: "Reflection",
       subtitle: "Looking Back with Gratitude",
-      date: "September 2025",
+      date: "After ODOS Program",
       color: "var(--color-yellow)",
       content: `
         <p>และนี่คือjourney ของเจ้าหญิงไม่ได้แค่เจอนี่ แต่เจอนู้นเจอนั่นมากมาย การได้พบเจอเรื่องราวมากมายระหว่างทาง จาก Girl form no where ที่ไม่เคยคิดว่าตัวเองจะมีโอกาสได้ไปใช้ชีวิตในต่างประเทศ ได้เรียนรู้สิ่งใหม่ๆ ทั้งในห้องเรียนและนอกห้องเรียน ทุกวันเต็มไปด้วยความตื่นเต้น ความสงสัย และความประทับใจเล็กๆ ที่ค่อยๆ สะสมขึ้นเรื่อยๆ

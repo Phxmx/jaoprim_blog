@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 import "./Gallery.css";
+import greatwall from "/gallery/greatwall.jpg?url";
+import friends from "/gallery/friends.jpg?url";
+import calligraphy from "/gallery/callighaphy.jpeg?url";
+import view from "/gallery/view.JPG?url";
+import nightMarket from "/gallery/night_market.JPG?url";
+import temple from "/gallery/temple.JPG?url";
+import farewell from "/gallery/farewell.jpg?url";
+import food from "/gallery/Food1.jpeg?url";
+import foodVid from "/gallery/Food2.mov?url";
+import studyVid from "/gallery/study_with_friends.MOV?url";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -7,75 +17,65 @@ const Gallery = () => {
   const photos = [
     {
       id: 1,
-      src: "/gallery/photo1.jpg",
+      src: greatwall,
       caption: "The Great Wall at sunrise",
       category: "Travel",
     },
     {
       id: 2,
-      src: "/gallery/photo2.jpg",
+      src: friends,
       caption: "Study session with friends",
       category: "Study Life",
     },
     {
       id: 3,
-      src: "/gallery/photo3.jpg",
-      caption: "Traditional tea ceremony",
+      src: calligraphy,
+      caption: "Calligraphy workshop",
       category: "Culture",
     },
     {
       id: 4,
-      src: "/gallery/photo4.jpg",
-      caption: "Mountain peak adventure",
-      category: "Travel",
-    },
-    {
-      id: 5,
-      src: "/gallery/photo5.jpg",
-      caption: "Calligraphy workshop",
-      category: "Study Life",
-    },
-    {
-      id: 6,
-      src: "/gallery/photo6.jpg",
-      caption: "Night market exploration",
-      category: "Culture",
-    },
-    {
-      id: 7,
-      src: "/gallery/photo7.jpg",
-      caption: "Campus life",
-      category: "Study Life",
-    },
-    {
-      id: 8,
-      src: "/gallery/photo8.jpg",
-      caption: "Ancient temple visit",
-      category: "Travel",
-    },
-    {
-      id: 9,
-      src: "/gallery/photo9.jpg",
-      caption: "Group photo memories",
-      category: "Friends",
-    },
-    {
-      id: 10,
-      src: "/gallery/photo10.jpg",
-      caption: "Local cuisine experience",
-      category: "Culture",
-    },
-    {
-      id: 11,
-      src: "/gallery/photo11.jpg",
+      src: view,
       caption: "Scenic landscape",
       category: "Travel",
     },
     {
-      id: 12,
-      src: "/gallery/photo12.jpg",
+      id: 5,
+      src: nightMarket,
+      caption: "Night market exploration",
+      category: "Culture",
+    },
+    {
+      id: 6,
+      src: temple,
+      caption: "Ancient temple visit",
+      category: "Travel",
+    },
+    {
+      id: 7,
+      src: farewell,
       caption: "Farewell celebration",
       category: "Friends",
+    },
+    {
+      id: 8,
+      src: food,
+      caption: "Local cuisine experience",
+      category: "Culture",
+    },
+    {
+      id: 9,
+      src: foodVid,
+      caption: "Delicious food moments",
+      category: "Culture",
+      type: "video",
+    },
+    {
+      id: 10,
+      src: studyVid,
+      caption: "Studying with friends",
+      category: "Study Life",
+      type: "video",
     },
   ];
 
@@ -104,11 +104,21 @@ const Gallery = () => {
               className="gallery-item"
               onClick={() => openLightbox(photo)}
             >
-              <img
-                src={photo.src}
-                alt={photo.caption}
-                className="gallery-image"
-              />
+              {photo.type === "video" ? (
+                <video
+                  src={photo.src}
+                  className="gallery-image"
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <img
+                  src={photo.src}
+                  alt={photo.caption}
+                  className="gallery-image"
+                />
+              )}
               <div className="gallery-overlay">
                 <div className="gallery-category">{photo.category}</div>
                 <div className="gallery-caption">{photo.caption}</div>
@@ -128,11 +138,20 @@ const Gallery = () => {
             className="lightbox-content"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.caption}
-              className="lightbox-image"
-            />
+            {selectedImage.type === "video" ? (
+              <video
+                src={selectedImage.src}
+                controls
+                className="lightbox-image"
+                autoPlay
+              />
+            ) : (
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.caption}
+                className="lightbox-image"
+              />
+            )}
             <div className="lightbox-info">
               <div className="lightbox-category">{selectedImage.category}</div>
               <p className="lightbox-caption">{selectedImage.caption}</p>
